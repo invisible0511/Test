@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greet New Contributors for Creating New PR/Issues.
-        if: github.event_name =='issues' ||( github.event_name =='pull_request_target' && github.event.action == 'opened')
+        if: github.event_name =='issues' ||( github.event_name =='pull_request' && github.event.action == 'opened')
         uses: actions/first-interaction@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
